@@ -1,3 +1,4 @@
+<% content_for(:title, @post.title) %>
 <h1><%= @post.title %></h1>
 <% if @post.date != nil %>
   <h4><%= @post.date.to_s %></h4>
