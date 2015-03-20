@@ -13,7 +13,6 @@ describe "the add a post process" do
     visit posts_path
     click_on "Add Post"
     fill_in 'Title', :with => ''
-    save_and_open_page
     click_on "Create Post"
     expect(page).to have_content 'Errors'
   end
