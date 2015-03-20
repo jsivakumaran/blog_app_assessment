@@ -17,7 +17,7 @@ class PostsController < ApplicationController
 
     @post[:date] = date
     if @post.save
-      flash[:notice] = @post.title + "successfully added!"
+      flash[:notice] = @post.title + " successfully added!"
       redirect_to posts_path
     else
       render :new
@@ -28,7 +28,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
 
     if @post.destroy
-      flash[:notice] = @post.title + "successfully deleted!"
+      flash[:notice] = @post.title + " successfully deleted!"
       redirect_to posts_path
     end
   end

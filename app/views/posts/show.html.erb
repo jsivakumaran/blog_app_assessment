@@ -5,7 +5,7 @@
 <% end %>
 <p><%= link_to "Edit", edit_post_path(@post) %> </p>
 <p><%= link_to "Delete", post_path(@post), :data => {:confirm => "For real?", :method => "delete"} %></p>
-
+<p><%= link_to "Add a Comment", new_post_comment_path(@post) %>
 
 <h4><%= @post.body %></h4>
 
