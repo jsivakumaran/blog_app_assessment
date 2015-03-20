@@ -1,7 +1,6 @@
 class PostsController < ApplicationController
   def index
     @posts = Post.all
-    render :index
   end
 
   def show
@@ -19,6 +18,7 @@ class PostsController < ApplicationController
     @post[:date] = date
     binding.pry
     if @post.save
+      flash[:notice] = "Post successfully added!"
       redirect_to posts_path
     else
       render :new
