@@ -1,5 +1,11 @@
 <h1><%= @post.title %></h1>
-<h4><%= @post.date %></h4>
+<% if @post.date != nil %>
+  <h4><%= @post.date.to_s %></h4>
+<% end %>
+<p><%= link_to "Edit", edit_post_path(@post) %> </p>
+<p><%= link_to "Delete", post_path(@post), :data => {:confirm => "For real?", :method => "delete"} %></p>
+
+
 <h4><%= @post.body %></h4>
 
 <p> <%= link_to "Return to Blog Posts", posts_path %> </p>

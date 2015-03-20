@@ -17,11 +17,22 @@ class PostsController < ApplicationController
     date = Date.today
 
     @post[:date] = date
+    binding.pry
     if @post.save
       redirect_to posts_path
     else
       render :new
     end
+  end
+
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+    redirect_to posts_path
+  end
+
+  def edit
+
   end
 
   private
