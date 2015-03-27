@@ -16,15 +16,17 @@ class CommentsController < ApplicationController
   end
 
   def edit
+    # binding.pry
     @post = Post.find(params[:post_id])
     @comment = @post.comments.find(params[:id])
   end
 
   def update
     @comment = Comment.find(params[:id])
+    @post = Post.find(params[:post_id])
     if @comment.update(comment_params)
       flash[:notice] = "Comment successfully Updated!"
-      redirect_to post_comment_path
+      redirect_to post_path(@post)
     else
       render :edit
     end
